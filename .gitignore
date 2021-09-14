@@ -1,0 +1,7 @@
+# common python dir and files
+venv/
+__pycache__/
+*.pyc
+
+# ide
+.idea/
