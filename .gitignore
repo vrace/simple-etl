@@ -5,3 +5,10 @@ __pycache__/
 
 # ide
 .idea/
+
+# notebooks
+.ipynb_checkpoints
+*-checkpoint.ipynb
+
+# misc system stuffs
+.DS_Store
