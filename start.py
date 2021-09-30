@@ -36,9 +36,7 @@ class SimpleETLApplication:
         self.conn = temp_db_connection()
 
     def perform_landing_tasks(self):
-        logger.info("Performing landing tasks")
-        for task in self.tasks.landing_tasks():
-            task.perform_landing(self.conn)
+        self.perform_tasks_in_batch("landing", self.tasks.landing_tasks(), lambda it: it.perform_landing(self.conn))
 
     def perform_staging_tasks(self):
         self.perform_tasks_in_batch("staging", self.tasks.staging_tasks(), lambda it: it.perform_staging(self.conn))
